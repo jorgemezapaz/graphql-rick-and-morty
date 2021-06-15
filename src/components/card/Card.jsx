@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 
 const CardItem = styled.div`
   display: grid;
@@ -7,8 +8,11 @@ const CardItem = styled.div`
   background-color: #eeeeee;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-top: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #e0dede;
+  }
 `
 
 const Image = styled.img`
@@ -16,8 +20,14 @@ const Image = styled.img`
 `
 
 const Card = ({ character }) => {
+  let history = useHistory()
+
+  const getDetail = () => {
+    history.push(`/character/${character.id}`)
+  }
+
   return (
-    <CardItem>
+    <CardItem onClick={getDetail}>
       <Image src={character.image} alt={character.name} />
       <div>
         <p>

@@ -2,6 +2,7 @@ import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import Card from '../card/Card'
 import styled from 'styled-components'
+import { ALL_CHARACTERS } from '../query/Query'
 
 const ListItems = styled.div`
   display: grid;
@@ -9,24 +10,8 @@ const ListItems = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `
 
-const QUERY = gql`
-  {
-    characters {
-      results {
-        id
-        name
-        status
-        image
-        location {
-          id
-          name
-        }
-      }
-    }
-  }
-`
 const List = () => {
-  const { loading, error, data } = useQuery(QUERY)
+  const { loading, error, data } = useQuery(ALL_CHARACTERS)
   if (loading) return <p>Loading...</p>
   if (error) return <p>error</p>
   return (

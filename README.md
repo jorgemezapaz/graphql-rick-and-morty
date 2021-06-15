@@ -20,4 +20,4 @@ You will also see any lint errors in the console.
 
 We are using the rick and morty graphql [https://rickandmortyapi.com/graphql](https://rickandmortyapi.com/graphql)
 
-Libraries: - [@apollo/client](https://www.npmjs.com/package/@apollo/client) - [graphql](https://www.npmjs.com/package/graphql) - [styled-components](https://www.npmjs.com/package/styled-components)
+Libraries: [@apollo/client](https://www.npmjs.com/package/@apollo/client) - [graphql](https://www.npmjs.com/package/graphql) - [styled-components](https://www.npmjs.com/package/styled-components)
